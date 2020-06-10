@@ -15,7 +15,7 @@ export class CreateComponent implements OnInit {
     navigation: true,
     pagination: {
       el: '.pager',
-      clickable: true
+      clickable: true,
     },
     centeredSlides: true,
     slidesPerView: 3
