@@ -18,7 +18,7 @@ export class CreateComponent implements OnInit {
       clickable: true
     },
     centeredSlides: true,
-    slidesPerView: 3,
+    slidesPerView: 3
   };
   selectedPetId = 0;
   form = this.fb.group({
