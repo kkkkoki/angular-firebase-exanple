@@ -4,3 +4,4 @@ export interface Pet {
   level: number;
   exp: number;
 }
+

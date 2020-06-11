@@ -6,14 +6,14 @@ import { Pet } from 'src/app/interface/pet';
   templateUrl: './pet.component.html',
   styleUrls: ['./pet.component.scss']
 })
-export class PetComponent implements OnInit {
+export class PetComponent  implements OnInit {
 
   @Input() pet: Pet;
   maxExp = 400;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   getExpPercentage(): number {
