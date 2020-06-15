@@ -18,12 +18,19 @@ const expTable = [
 })
 export class ExpPipe implements PipeTransform {
 
-  transform(pet: Pet, ...args: any[]): any {
+  transform(pet: Pet, type: 'percent' | 'label'): any {
     const totalExp = pet.exp;
     const level = pet.level;
     const baseExp = expTable[level - 2] || 0;
     const nextExp = expTable[level - 1] - baseExp;
     const exp = totalExp - baseExp;
+
+    if (type === 'percent') {
+      console.log(exp / nextExp * 100);
+      return exp / nextExp * 100;
+    } else {
+      return exp + ' / ' + nextExp;
+    }
     return exp + ' / ' + nextExp;
   }
 
