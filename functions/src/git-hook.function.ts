@@ -17,7 +17,7 @@ const expTable = [
   10000
 ];
 
-const EARNED_EXPERIENCE = 10;
+const EARN_EXPERIENCE = 10;
 
 export const gitHook = functions.region('asia-northeast1').https.onRequest(async (request, response) => {
   const pets = await db.collection('pets')
@@ -28,7 +28,7 @@ export const gitHook = functions.region('asia-northeast1').https.onRequest(async
 
   let level = 1;
 expTable.some(nextExp => {
-  if (pet.exp + EARNED_EXPERIENCE >= nextExp) {
+  if (pet.exp + EARN_EXPERIENCE >= nextExp) {
     level++;
     return false;
   } else {
@@ -36,7 +36,7 @@ expTable.some(nextExp => {
   }
 });
 
-  const increement = admin.firestore.FieldValue.increment(EARNED_EXPERIENCE)
+  const increement = admin.firestore.FieldValue.increment(EARN_EXPERIENCE)
   pets.docs.forEach(doc => doc.ref.update({
     exp: increement,
     level
