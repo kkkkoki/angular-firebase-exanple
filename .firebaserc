@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "gitpet-ff96f"
+  },
+  "targets": {
+    "gitpet-ff96f": {
+      "hosting": {
+        "dog-hunting": [
+          "gitpet-ff96f"
+        ]
+      }
+    }
+  }
+}
